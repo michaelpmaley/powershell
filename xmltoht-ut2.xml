@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applianceDefinition>
+  <virtualMachines>
+    <vm name="AD" ip="192.168.1.2" role="AD">
+      <domainConfig>
+        <netbiosDomainName>Acme</netbiosDomainName>
+        <dnsDomainName>acme.local</dnsDomainName>
+      </domainConfig>
+      <adConfig>
+        <ucpRootOUName>Acme</ucpRootOUName>
+        <ucpComputersOUName>Acme Computers</ucpComputersOUName>
+      </adConfig>
+      <usersConfig>
+        <adminUser name="acme_admin" password="p@$$worD" />
+        <serviceUser name="acme_svc" password="p@$$worD" />
+        <sqlServiceUser name="acme_sql" password="p@$$worD" />
+      </usersConfig>
+      <groupsConfig>
+        <adminsGroup name="Acme_Admins" />
+      </groupsConfig>
+    </vm>
+    <vm name="SQL" ip="192.168.1.3" role="DATABASE">
+      <usersConfig>
+        <password>p@$$worD</password>
+        <saUser name="sa" />
+      </usersConfig>
+    </vm>
+    <vm name="PXE" ip="192.168.1.4" role="PXE">
+      <networks>
+        <network name="eth0">
+          <ip>192.168.1.4</ip>
+          <subnetMask>255.255.255.0</subnetMask>
+          <defaultGateway>192.168.1.1</defaultGateway>
+        </network>
+      </networks>
+    </vm>
+    <vm name="VCENTER" ip="192.168.1.5" role="PLATFORM">
+      <networks>
+       <network name="Ethernet">
+         <ip>192.168.1.5</ip>
+         <subnetMask>255.255.255.0</subnetMask>
+         <defaultGateway>192.168.1.1</defaultGateway>
+       </network>
+      </networks>
+      <managementDatacenter>Acme Management DC</managementDatacenter>
+      <computeDatacenter>Acme Compute DC</computeDatacenter>
+    </vm>
+  </virtualMachines>
+  <settings>
+    <companyName>Acme, Ltd.</companyName>
+    <deploymentType>PRODUCTION</deploymentType>
+    <platformType>VMware</platformType>
+    <applianceModel>1000A Rev5</applianceModel>
+    <isEthernetFabricEnabled>true</isEthernetFabricEnabled>
+    <isLayerThree>false</isLayerThree>
+  </settings>
+</applianceDefinition>

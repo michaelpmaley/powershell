@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unittest1>
+   <element1></element1>
+   <element2>elem2val</element2>
+   <element3 attr3="attr3val"></element3>
+   <element4 attr4="attr4val">elem4val</element4>
+   <element5>
+      <element5a></element5a>
+      <element5b>elem5bval</element5b>
+      <element5c attr5c="attr5cval"></element5c>
+      <element5d attr5d="attr5dval">elem5dval</element5d>
+   </element5>
+</unittest1>
