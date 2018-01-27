@@ -1,6 +1,6 @@
 # PowerShell Scripts
 
-This is just a collection of PowerShell scripts.
+A collection of PowerShell scripts.
 
 ## Template.ps1
 
